@@ -13,3 +13,22 @@ blue = (0, 0, 255)
 red = (255, 0, 0)
 black = (0, 0, 0)
 white = (255, 255, 255)
+
+class Player:
+    def __init__(self):
+        self.width = 50
+        self.hight = 50
+        self.a = Width // 2 - self.width // 2
+        self.b = Height - self.hight - 10
+        self.speed = 7
+
+    def draw(self, win):
+        pygame.draw.rect(win, blue(self.a, self.b, self.hight, self.width))
+
+    def moves(self, keys):
+        if keys[pygame.k_left] or keys[pygame.k_a] or keys[pygame.k_A]:
+            self.a -= self.speed
+        if keys[pygame.k_left] or keys[pygame.k_d] or keys[pygame.k_D]:
+            self.a += self.speed
+
+        self.a = max(0, min(self.a, Width - self.width))
