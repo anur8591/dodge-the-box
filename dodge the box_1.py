@@ -51,3 +51,10 @@ class Enemy:
     def off_screen(self):
         return self.y > Height
     
+def is_colllision(player, enemy):
+    return(
+        player.a < enemy.a + enemy.width and
+        player.x + player.width > enemy.x and
+        player.b < enemy.b + enemy.height and
+        player.y + player.height > enemy.y
+    )
