@@ -50,3 +50,4 @@ class Enemy:
 
     def off_screen(self):
         return self.y > Height
+    
