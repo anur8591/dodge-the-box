@@ -23,7 +23,7 @@ class Player:
         self.speed = 7
 
     def draw(self, win):
-        pygame.draw.rect(win, blue(self.a, self.b, self.hight, self.width))
+        pygame.draw.rect(win, blue,(self.a, self.b, self.hight, self.width))
 
     def moves(self, keys):
         if keys[pygame.k_left] or keys[pygame.k_a] or keys[pygame.k_A]:
@@ -32,3 +32,21 @@ class Player:
             self.a += self.speed
 
         self.a = max(0, min(self.a, Width - self.width))
+
+
+class Enemy:
+    def __init__(self, speed):
+        self.width = 40
+        self.height = 40
+        self.x = random.randint(0,Width - self.width)
+        self.y = -self.height
+        self.speed = speed
+
+    def fall(self):
+        self.y += self.speed
+
+    def draw(self, win):
+        pygame.draw.rect(win, red,(self.x, self.y, self.width, self.height))
+
+    def off_screen(self):
+        return self.y > Height
