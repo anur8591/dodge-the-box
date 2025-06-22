@@ -92,6 +92,9 @@ def main():
             if enemy.off_screen():
                 enemies.remove(enemy)
                 score += 1
-                
 
+                if score % 10 == 0:
+                    enemy_speed += 1
+                
+                
             
