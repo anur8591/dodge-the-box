@@ -78,4 +78,10 @@ def main():
 
         player.move(keys)
         player.draw(win)
+
+        if random.randint(1, 20) == 1:
+            enemies.append(Enemy(enemy_speed))
         
+        for enemy in enemies[:]:
+            enemy.fall()
+            enemy.draw(win)
