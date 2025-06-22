@@ -96,5 +96,11 @@ def main():
                 if score % 10 == 0:
                     enemy_speed += 1
                 
-                
+        score_text = font.render(f"score: {score}", True, white)
+        win.blit(score_text, (10, 10))
+
+        pygame.display.update()
+    pygame.quit()
+    sys.exit()
+      
             
