@@ -58,3 +58,24 @@ def is_colllision(player, enemy):
         player.b < enemy.b + enemy.height and
         player.y + player.height > enemy.y
     )
+
+def main():
+    player = Player()
+    enemies = []
+    enemy_speed = 5
+    score = 0
+    font = pygame.font.SysFont("Arial", 300)
+
+    running = True
+    while running:
+        clock.tick(60) 
+        win.fill(black)
+
+        keys = pygame.key.get_pressed()
+        for enent in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        player.move(keys)
+        player.draw(win)
+        
