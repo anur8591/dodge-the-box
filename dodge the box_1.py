@@ -85,3 +85,8 @@ def main():
         for enemy in enemies[:]:
             enemy.fall()
             enemy.draw(win)
+
+            if is_collision(player, enemy):
+                running = False
+
+            
