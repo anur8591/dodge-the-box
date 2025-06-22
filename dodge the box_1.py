@@ -89,4 +89,9 @@ def main():
             if is_collision(player, enemy):
                 running = False
 
+            if enemy.off_screen():
+                enemies.remove(enemy)
+                score += 1
+                
+
             
