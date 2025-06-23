@@ -11,7 +11,6 @@ pygame.display.set_caption("Dodge the Box")     # Set the window title
 
 clock = pygame.time.Clock()  # Controls how fast the game runs
 
-
 blue = (0, 0, 255)
 red = (255, 0, 0)
 black = (0, 0, 0)
